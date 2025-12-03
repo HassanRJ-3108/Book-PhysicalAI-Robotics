@@ -1,0 +1,15 @@
+{
+  "hero.title": {"message": "فزیکل AI اور روبوٹکس"},
+  "hero.subtitle": {"message": "مجسم انٹیلیجنس اور ہیومینائیڈ روبوٹکس کے لیے پریمیم لرننگ پلیٹ فارم۔"},
+  "hero.cta": {"message": "سیکھنا شروع کریں"},
+
+  "quicklinks.title": {"message": "فوری روابط"},
+  "quicklinks.beginnerIntro": {"message": "ابتدائی · تعارف"},
+  "quicklinks.fundamentalsPhysics": {"message": "بنیادی · طبیعیات"},
+  "quicklinks.roboticsMechanicalDesign": {"message": "روبوٹکس · مکینیکل ڈیزائن"},
+  "quicklinks.humanoidBipedal": {"message": "ہیومینائیڈ · دو پیروں کی چال"},
+  "quicklinks.applicationsIndustrial": {"message": "ایپلی کیشنز · صنعتی"},
+
+  "chapter.read": {"message": "باب پڑھیں"}
+}
+

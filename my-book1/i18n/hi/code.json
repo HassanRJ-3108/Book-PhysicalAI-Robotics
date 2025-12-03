@@ -1,0 +1,15 @@
+{
+  "hero.title": {"message": "भौतिक AI और रोबोटिक्स"},
+  "hero.subtitle": {"message": "अवतरित बुद्धिमत्ता और मानवरूपी रोबोटिक्स के लिए प्रीमियम सीखने का अनुभव बनाएँ।"},
+  "hero.cta": {"message": "सीखना शुरू करें"},
+
+  "quicklinks.title": {"message": "त्वरित लिंक"},
+  "quicklinks.beginnerIntro": {"message": "शुरुआती · परिचय"},
+  "quicklinks.fundamentalsPhysics": {"message": "बुनियादी · भौतिकी"},
+  "quicklinks.roboticsMechanicalDesign": {"message": "रोबोटिक्स · यांत्रिक डिज़ाइन"},
+  "quicklinks.humanoidBipedal": {"message": "मानवाकृति · द्विपाद चाल"},
+  "quicklinks.applicationsIndustrial": {"message": "अनुप्रयोग · औद्योगिक"},
+
+  "chapter.read": {"message": "अध्याय पढ़ें"}
+}
+
