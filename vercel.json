@@ -1,7 +1,20 @@
 {
-    "buildCommand": "npm run start",
-    "devCommand": "npm run start",
-    "installCommand": "npm install",
-    "framework": null,
-    "outputDirectory": null
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
