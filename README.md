@@ -1,306 +1,165 @@
-# Physical AI Book RAG Chatbot - Complete System
+# Physical AI & Robotics Book
 
-A complete RAG (Retrieval-Augmented Generation) chatbot system for the Physical AI & Robotics book, featuring:
-- **FastAPI Backend** with chat endpoints
-- **OpenAI Agents SDK** with Gemini API
-- **Qdrant Cloud** vector database
-- **Beautiful Floating Chat UI** in Docusaurus
+Comprehensive online textbook covering Physical AI, ROS 2, Simulation, NVIDIA Isaac, VLA models, and Humanoid Robotics.
 
----
+Built using **Spec-Kit Plus** workflow with **Gemini AI Code Assistant**.
 
-## 🎯 Features
+## 🎯 Project Overview
 
-### Backend
-- ✅ RAG chatbot using OpenAI Agents SDK + Gemini
-- ✅ FastAPI REST API with CORS
-- ✅ Qdrant Cloud vector search
-- ✅ Async support for scalability
-- ✅ Health check endpoints
+This project was developed for a hackathon using a structured software development approach:
+- Specification-driven development
+- Iterative implementation
+- Quality-first methodology
+- Documentation-as-code
+
+## 📚 Book Content
+
+### Chapters
+1. **Introduction** - What is Physical AI?
+2. **ROS 2** - The Robotic Nervous System
+3. **Simulation** - Digital Twin (Gazebo & Unity)
+4. **NVIDIA Isaac** - AI-Robot Brain
+5. **VLA Models** - Vision-Language-Action
+6. **Humanoid Robotics** - Advanced Control
+7. **Hardware** - Setup & Requirements
+
+## 🛠️ Tech Stack
 
 ### Frontend
-- ✅ Floating chat button (bottom-right)
-- ✅ Modern, responsive chat UI
-- ✅ Dark mode support
-- ✅ Message history
-- ✅ Reset chat functionality
-- ✅ Smooth animations
-- ✅ Mobile-friendly
+- **Framework:** Docusaurus 3.9.2
+- **Language:** TypeScript
+- **Styling:** Custom CSS (Teal theme #1e7a6f)
+- **i18n:** English, Urdu (اردو), Hindi (हिंदी)
 
----
+### Backend
+- **API:** FastAPI
+- **Database:** Qdrant (vector storage)
+- **AI:** OpenAI Agents SDK + Gemini API
+- **Auth:** Supabase
 
-## 📁 Project Structure
+### Features
+- 🎨 Modern teal-themed UI
+- 🌍 Multi-language support (EN/UR/HI)
+- 🔍 Local search functionality
+- 💬 AI-powered RAG chatbot
+- 🔐 User authentication & profiles
+- 📱 Fully responsive design
+
+## 🗂️ Project Structure
 
 ```
-hackathon-project/
-├── backend/                    # Python FastAPI backend
-│   ├── chatbot/
-│   │   ├── agent.py           # RAG chatbot with Agents SDK
-│   │   └── qdrant_retriever.py # Qdrant search
-│   ├── models/
-│   │   └── schemas.py         # Pydantic models
-│   ├── main.py                # FastAPI application
-│   ├── ingest_data.py         # Data ingestion script
-│   └── test_chatbot.py        # Test script
-│
-├── src/                       # Frontend (Docusaurus)
-│   ├── components/
-│   │   ├── ChatBot.tsx        # Floating chat component
-│   │   └── ChatBot.module.css # Chatbot styles
-│   └── theme/
-│       └── Root.tsx           # Global integration
-│
-└── book_knowledge.txt         # Book content (14 chunks in Qdrant)
+├── docs/                  # Book content (45+ pages)
+├── src/
+│   ├── components/       # React components
+│   ├── pages/           # Custom pages
+│   └── css/             # Styles
+├── backend/
+│   ├── chatbot/         # RAG chatbot
+│   └── auth/            # Authentication
+├── specs/               # Feature specifications
+└── history/            # Development history
 ```
 
----
+## 📋 Development Process
 
-## 🚀 Setup & Running
+This project followed **Spec-Kit Plus** methodology:
 
-### 1. Backend Setup
+### 1. Specification
+- Clear requirements defined
+- User stories documented
+- Success criteria established
 
+### 2. Planning
+- Technical approach designed
+- Architecture decisions made
+- Implementation phases outlined
+
+### 3. Implementation
+- Feature-by-feature development
+- Incremental testing
+- Continuous refinement
+
+### 4. Verification
+- Code review
+- Testing (manual + automated)
+- Quality assurance
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js >= 18.0
+- npm >= 9.0
+- Python >= 3.11 (for backend)
+
+### Frontend Setup
 ```bash
-cd backend
-
-# Install dependencies
-uv sync
-
-# Configure environment
-cp env.example .env
-# Add your GEMINI_API_KEY to .env
-
-# (Optional) Ingest book data if not done
-uv run python ingest_data.py
-
-# Start FastAPI server
-uv run python main.py
-```
-
-Backend will run on: `http://localhost:8000`
-
-**API Endpoints:**
-- `GET /` - API info
-- `GET /health` - Health check
-- `POST /api/chat` - Chat endpoint
-- `POST /api/chat/reset` - Reset conversation
-- `GET /docs` - Swagger UI
-
-### 2. Frontend Setup
-
-```bash
-# From project root
 npm install
-
-# Start Docusaurus dev server
-npm start
+npm start  # Dev server on localhost:3000
 ```
 
-Frontend will run on: `http://localhost:3000`
-
----
-
-## 💬 Using the Chatbot
-
-1. **Start Backend**: `cd backend && uv run python main.py`
-2. **Start Frontend**: `npm start`
-3. **Open Browser**: Navigate to `http://localhost:3000`
-4. **Click Chat Button**: Bottom-right floating button (🤖)
-5. **Ask Questions**: About Physical AI, ROS 2, Robotics, etc.
-
-### Chat Features
-
-- **Open Chat**: Click floating button
-- **Send Message**: Type and press Enter or click send
-- **Reset Chat**: Click reset icon (🔄) in header
-- **Close Chat**: Click X icon in header
-- **Suggestions**: Click suggested questions to get started
-
----
-
-## 🎨 UI Features
-
-### Responsive Design
-- **Desktop**: 400x600px chat window
-- **Tablet**: Full-width with margins
-- **Mobile**: Full-screen chat experience
-
-### Animations
-- Smooth slide-up on open
-- Fade-in messages
-- Floating bot avatar
-- Typing indicator
-- Hover effects
-
-### Dark Mode
-- Automatically adapts to Docusaurus theme
-- Consistent colors in both modes
-
----
-
-## 🔧 Configuration
-
-### Backend (`backend/.env`)
-```bash
-GEMINI_API_KEY=your_api_key_here
-```
-
-### Qdrant (Hardcoded in code)
-- **URL**: Cloud instance
-- **Collection**: `book_knowledge`
-- **Chunks**: 14 chunks from 7 chapters
-- **Vector Size**: 768 (Gemini embeddings)
-
-### CORS (in `main.py`)
-```python
-allow_origins=[
-    "http://localhost:3000",  # Docusaurus dev
-    "http://localhost:3001",
-    "*"  # Allow all (restrict in production)
-]
-```
-
----
-
-## 📊 API Usage Examples
-
-### Chat Request
-```bash
-curl -X POST http://localhost:8000/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{
-    "message": "What is Physical AI?",
-    "conversation_id": "user-123"
-  }'
-```
-
-### Response
-```json
-{
-  "response": "Physical AI refers to...",
-  "conversation_id": "user-123",
-  "success": true
-}
-```
-
-### Health Check
-```bash
-curl http://localhost:8000/health
-```
-
----
-
-## 🧪 Testing
-
-### Test Backend Only
+### Backend Setup
 ```bash
 cd backend
-uv run python test_chatbot.py
+pip install -r requirements.txt
+uvicorn main:app --reload  # API on localhost:8000
 ```
-
-### Test API Endpoints
-```bash
-# Health check
-curl http://localhost:8000/health
-
-# Chat
-curl -X POST http://localhost:8000/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"message": "Tell me about ROS 2"}'
-```
-
-### Test Full System
-1. Start backend: `uv run python main.py`
-2. Start frontend: `npm start`
-3. Open browser: `http://localhost:3000`
-4. Click chat button and interact
-
----
-
-## 🔜 Future Enhancements
-
-### Planned Features
-- [ ] User authentication (Sign Up / Login)
-- [ ] Personalized chat history per user
-- [ ] Database storage for conversations
-- [ ] Streaming responses (real-time)
-- [ ] Multi-language support
-- [ ] Voice input/output
-- [ ] Export conversation
-- [ ] Feedback system
-
-### In Progress
-- Chat conversation memory
-- Better error handling
-- Rate limiting
-- Analytics
-
----
-
-## 📚 Tech Stack
-
-### Backend
-- **FastAPI** - Modern async web framework
-- **OpenAI Agents SDK** - Agentic framework
-- **Qdrant** - Vector database
-- **Gemini API** - LLM & embeddings
-- **Uvicorn** - ASGI server
-
-### Frontend
-- **React** - UI framework
-- **TypeScript** - Type safety
-- **Docusaurus** - Documentation site
-- **CSS Modules** - Scoped styling
-
----
-
-## 🐛 Troubleshooting
-
-### Backend won't start
-- Check if Gemini API key is set in `.env`
-- Ensure all dependencies are installed: `uv sync`
-- Check port 8000 is not in use
-
-### Frontend can't connect
-- Verify backend is running on port 8000
-- Check CORS settings in `main.py`
-- Open browser console for errors
-
-### Chatbot not responding
-- Check backend logs for errors
-- Verify Qdrant connection
-- Test with `curl` directly to API
-
-### Rate limit errors
-- Gemini API has rate limits
-- Wait a minute and try again
-- Check your API quota
-
----
 
 ## 📖 Documentation
 
-- [FastAPI Docs](https://fastapi.tiangolo.com/)
-- [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
-- [Qdrant Docs](https://qdrant.tech/documentation/)
-- [Gemini API](https://ai.google.dev/)
-- [Docusaurus](https://docusaurus.io/)
+- **specs/** - Complete feature specifications
+- **history/** - Development conversation logs
+- **docs/** - Book content
+
+Each feature has:
+- `spec.md` - Requirements & acceptance criteria
+- `plan.md` - Implementation strategy
+- `tasks.md` - Task breakdown
+- `quickstart.md` - Setup guide
+
+## 🎯 Key Features
+
+### Feature 001: Docusaurus Frontend
+Modern, responsive book interface with custom theme
+
+### Feature 002: Book Content
+45+ pages of comprehensive Physical AI curriculum
+
+### Feature 003: RAG Chatbot Backend
+AI-powered Q&A system using book content
+
+### Feature 004: Authentication
+Supabase-based user management & profiles
+
+### Feature 005: Chatbot UI
+React component for interactive AI assistance
+
+## 🤝 Contributing
+
+This is a hackathon project. Contributions welcome!
+
+1. Fork the repository
+2. Create feature branch
+3. Follow Spec-Kit Plus workflow
+4. Submit pull request
+
+## 📝 License
+
+MIT License - See LICENSE file
+
+## 👤 Author
+
+**Hassan RJ**
+- GitHub: [@HassanRJ-3108](https://github.com/HassanRJ-3108)
+- Project: Book - Physical AI & Robotics
+
+## 🙏 Acknowledgments
+
+- Built with Gemini AI Code Assistant
+- Spec-Kit Plus methodology
+- Docusaurus community
+- Open source contributors
 
 ---
 
-## 🎉 Quick Start (TL;DR)
-
-```bash
-# Terminal 1 - Backend
-cd backend
-uv sync
-echo "GEMINI_API_KEY=your_key" > .env
-uv run python main.py
-
-# Terminal 2 - Frontend
-npm start
-
-# Open browser: http://localhost:3000
-# Click chat button (bottom-right)
-# Ask: "What is Physical AI?"
-```
-
-Enjoy your AI-powered book assistant! 🤖
+**Last Updated:** December 2025  
+**Status:** Active Development

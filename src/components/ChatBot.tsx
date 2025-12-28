@@ -32,7 +32,18 @@ export default function ChatBot() {
             });
 
             const data = await response.json();
-            setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+
+            if (!response.ok) {
+                // Backend returned an error
+                const errorMessage = data.detail || 'An error occurred while processing your request';
+                setMessages(prev => [...prev, {
+                    role: 'assistant',
+                    content: `⚠️ Error: ${errorMessage}`
+                }]);
+            } else {
+                // Success - add response
+                setMessages(prev => [...prev, { role: 'assistant', content: data.response }]);
+            }
         } catch (error) {
             console.error('Chat error:', error);
             setMessages(prev => [...prev, {

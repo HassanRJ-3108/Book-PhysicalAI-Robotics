@@ -30,6 +30,8 @@ interface AuthResponse {
     token_type: string;
     user: User;
     profile?: UserProfile;
+    email_confirmation_required?: boolean;
+    message?: string;
 }
 
 interface SignupData {

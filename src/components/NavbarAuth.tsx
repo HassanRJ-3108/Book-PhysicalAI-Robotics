@@ -62,11 +62,11 @@ export default function NavbarAuth() {
                         {isDropdownOpen && (
                             <div className={styles.dropdown}>
                                 <Link
-                                    to="/profile-setup"
+                                    to="/profile"
                                     className={styles.dropdownItem}
                                     onClick={() => setIsDropdownOpen(false)}
                                 >
-                                    Profile Setup
+                                    Profile Settings
                                 </Link>
                                 <button
                                     className={styles.dropdownItem}
