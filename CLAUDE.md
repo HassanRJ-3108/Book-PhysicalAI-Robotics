@@ -213,3 +213,10 @@ See `.specify/memory/constitution.md` for code quality, testing, performance, se
 Always use context7 when I need code generation, setup or configuration steps, or
 library/API documentation. This means you should automatically use the Context7 MCP
 tools to resolve library id and get library docs without me having to explicitly ask.
+
+## Active Technologies
+- Python 3.11 + `qdrant-client`, `transformers` (or a similar embedding library like `sentence-transformers`), `tiktoken` (for chunking), `pydantic` (for data validation, if needed) (001-ingest-book-qdrant)
+- Qdrant (vector database) (001-ingest-book-qdrant)
+
+## Recent Changes
+- 001-ingest-book-qdrant: Added Python 3.11 + `qdrant-client`, `transformers` (or a similar embedding library like `sentence-transformers`), `tiktoken` (for chunking), `pydantic` (for data validation, if needed)
