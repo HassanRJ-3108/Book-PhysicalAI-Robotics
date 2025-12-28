@@ -8,7 +8,7 @@ description: "React chatbot component integrated with FastAPI RAG backend"
 ## 1. Feature Description
 
 React-based chatbot UI component that integrates with FastAPI RAG backend, providing interactive Q&A about Physical AI book content with conversation history and suggested questions.
-
+.
 ## 2. User Story
 
 **As a** student reading the book,
